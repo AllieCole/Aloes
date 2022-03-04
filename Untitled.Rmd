@@ -1,0 +1,32 @@
+---
+title: "Aloe_work"
+author: "Allie Cole"
+date: "3/3/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(tidyverse)
+library(janitor)
+library(here)
+library(stringr)
+```
+
+#reading and cleaning the data
+
+```{r}
+aloes_raw <- read_csv(here("Aloe_list - messed.csv"))
+
+# Removing unwanted words and - 
+aloes_raw$july_24_2021 <- gsub("Aloe","",as.character(aloes_raw$july_24_2021))
+
+aloes_raw$sep_09_2021 <- gsub("Aloe","",as.character(aloes_raw$sep_09_2021))
+
+aloes_raw$ <- gsub("-","",as.character(aloes_raw))
+
+
+  #pivot_longer(names_to = "", values_to = "")
+```
+
